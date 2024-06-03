@@ -1,2 +1,2 @@
 #!/bin/bash
-uniq -u poem.txt | head -n 1
+uniq -u poem.txt | sort | uniq -u
