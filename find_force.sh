@@ -1,2 +1,2 @@
 #!/bin/bash
-find /home -name "force"
+find /home -name "the_force.txt"
