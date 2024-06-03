@@ -1,2 +1,2 @@
 #!/bin/bash
-ls total | wc -l
+find ./total -type d | wc -l
