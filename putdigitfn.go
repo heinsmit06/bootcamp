@@ -1,7 +1,11 @@
 package bootcamp
 
-import "github.com/alem-platform/ap"
+import (
+	"github.com/alem-platform/ap"
+)
 
 func PutDigit(n int) {
-	ap.PutRune(rune(n + 48))
+	if n < 10 {
+		ap.PutRune(rune(n + 48))
+	}
 }
