@@ -47,11 +47,11 @@ func PutNumber(n int) {
 	//	ap.PutRune(rune((n%10)*(-1) + 48))
 	//}
 	//
-	//if (n < 0) {
-	//	ap.PutRune('-')
-	//	n = -n
-	//}
-	//Recursion(n)
+	if n < 0 {
+		ap.PutRune('-')
+		n = -n
+	}
+	Recursion(n)
 }
 
 func Recursion(n int) {
