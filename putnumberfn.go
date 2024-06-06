@@ -1,21 +1,26 @@
 package bootcamp
 
 import (
-	"fmt"
+	"github.com/alem-platform/ap"
 )
 
 func PutNumber(n int) {
-	//n_length := 0
-	//
-	//for n > 0 {
-	//	n = n / 10
-	//	n_length++
-	//}
-
-	//for i := n_length; i > 0; i-- {
-	//	ap.PutRune(rune( n %  ))
-	//
-	//}
-
-	fmt.Print(n)
+	if n >= 0 && n < 10 {
+		ap.PutRune(rune(n + 48))
+	} else if n >= 10 && n < 100 {
+		ap.PutRune(rune(n/10 + 48))
+		ap.PutRune(rune(n%10 + 48))
+	} else if n >= 100 && n < 1000 {
+		ap.PutRune(rune(n/100 + 48))
+		n = n - (n/100)*100
+		ap.PutRune(rune(n/10 + 48))
+		ap.PutRune(rune(n%10 + 48))
+	} else if n >= 1000 && n < 10000 {
+		ap.PutRune(rune(n/1000 + 48))
+		n = n - (n/1000)*1000
+		ap.PutRune(rune(n/100 + 48))
+		n = n - (n/100)*100
+		ap.PutRune(rune(n/10 + 48))
+		ap.PutRune(rune(n%10 + 48))
+	}
 }
