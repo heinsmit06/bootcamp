@@ -7,19 +7,13 @@ func PrintSquare(w int) {
 		for c := 0; c < w; c++ {
 			ap.PutRune('0')
 
-			if c == w-1 {
-				break
-			} else {
+			if c < w-1 {
 				ap.PutRune(' ')
 			}
 
 		}
 
-		//if r == w-1 {
-		//	break
-		//} else {
 		ap.PutRune('\n')
-		//}
 
 	}
 }
