@@ -3,10 +3,11 @@ package main
 import "github.com/alem-platform/ap"
 
 func main() {
-	ap.PutRune('S')
-	ap.PutRune('a')
-	ap.PutRune('l')
-	ap.PutRune('e')
-	ap.PutRune('m')
-	ap.PutRune('!')
+	s := "Salem!"
+
+	for i := 0; i < len(s); i++ {
+		ap.PutRune(rune(s[i]))
+	}
+
+	ap.PutRune('\n')
 }
