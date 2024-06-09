@@ -24,6 +24,4 @@ func main() {
 	} else {
 		ap.PutRune('F')
 	}
-
-	ap.PutRune('\n')
 }
