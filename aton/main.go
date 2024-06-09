@@ -10,30 +10,15 @@ import (
 func main() {
 	var string_length int
 	var str string
+
 	fmt.Scanf("%d", &string_length)
-	fmt.Scanf("%s", &str)
+	string_array := make([]string, 1)
+
+	fmt.Scanf("%s", &string_array[0])
 
 	for i := 0; i < string_length; i++ {
 
-		if str[i] == '\t' {
-			bootcamp.PutNumber(int(rune(str[i])))
-		} else if str[i] == '\n' {
-			bootcamp.PutNumber(int(rune(str[i])))
-		} else if str[i] == '\v' {
-			bootcamp.PutNumber(int(rune(str[i])))
-		} else if str[i] == '\f' {
-			bootcamp.PutNumber(int(rune(str[i])))
-		} else if str[i] == '\r' {
-			bootcamp.PutNumber(int(rune(str[i])))
-		} else if str[i] == ' ' {
-			bootcamp.PutNumber(int(rune(str[i])))
-		} else if str[i] == 0x85 {
-			bootcamp.PutNumber(int(rune(str[i])))
-		} else if str[i] == 0xA0 {
-			bootcamp.PutNumber(int(rune(str[i])))
-		} else {
-			bootcamp.PutNumber(int(rune(str[i])))
-		}
+		bootcamp.PutNumber(int(rune(string_array[0][i])))
 
 		if i < len(str)-1 {
 			ap.PutRune(' ')
