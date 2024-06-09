@@ -13,7 +13,7 @@ func main() {
 	fmt.Scanf("%d", &string_length)
 	fmt.Scanf("%s", &str)
 
-	for i := 0; i < len(str); i++ {
+	for i := 0; i < string_length; i++ {
 		bootcamp.PutNumber(int(rune(str[i])))
 
 		if i < len(str)-1 {
