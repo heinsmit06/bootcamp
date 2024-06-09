@@ -1,6 +1,8 @@
 package bootcamp
 
 import (
+	"bootcamp"
+
 	"github.com/alem-platform/ap"
 )
 
