@@ -19,7 +19,7 @@ func PutNumber1(n int) {
 		ap.PutRune('-')
 		n = -n
 	}
-	Recursion(n)
+	Recursion1(n)
 }
 
 func Recursion1(n int) {
@@ -27,6 +27,6 @@ func Recursion1(n int) {
 		ap.PutRune(rune(n + 48))
 		return
 	}
-	Recursion(n / 10)
+	Recursion1(n / 10)
 	ap.PutRune(rune(n%10 + 48))
 }
