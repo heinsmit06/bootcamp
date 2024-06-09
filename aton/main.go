@@ -9,7 +9,6 @@ import (
 
 func main() {
 	var string_length int
-	var str string
 
 	fmt.Scanf("%d", &string_length)
 	string_array := make([]string, 1)
@@ -20,7 +19,7 @@ func main() {
 
 		bootcamp.PutNumber(int(rune(string_array[0][i])))
 
-		if i < len(str)-1 {
+		if i < string_length-1 {
 			ap.PutRune(' ')
 		}
 	}
