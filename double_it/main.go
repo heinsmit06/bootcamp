@@ -19,7 +19,7 @@ func main() {
 	for j := 0; j < N; j++ {
 		bootcamp.PutNumber(arr[j] * 2)
 
-		if j < N {
+		if j < N-1 {
 			ap.PutRune(' ')
 		}
 	}
