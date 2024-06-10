@@ -3,7 +3,7 @@ package bootcamp
 func ArraySlice(arr [20]int, low int, high int) []int {
 	if (low < high) && (low >= 0 && high <= 20) {
 
-		slice_length := high - low + 1
+		slice_length := high - low
 		slc := make([]int, slice_length)
 		slc_counter := 0
 
