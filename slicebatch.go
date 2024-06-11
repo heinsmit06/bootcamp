@@ -5,34 +5,16 @@ func SliceBatch(slice []int, size int) [][]int {
 		return nil
 	}
 
-	slc_size := 0
+	partitioned_slice := [][]int{}
 
-	if (len(slice))%size == 0 {
-		slc_size = len(slice) / size
-	} else {
-		slc_size = (len(slice) / size) + 1
-	}
+	for i := 0; i < len(slice); i += size {
+		batch_end := i + size
 
-	idx_counter := 0
-
-	partitioned_slice := make([][]int, slc_size)
-	for k := 0; k < len(partitioned_slice); k++ {
-		if k == len(partitioned_slice)-1 {
-			partitioned_slice[k] = make([]int, len(slice)%size)
-			continue
+		if batch_end > len(slice) {
+			batch_end = len(slice)
 		}
-		partitioned_slice[k] = make([]int, size)
-	}
 
-	for i := 0; i < len(partitioned_slice); i++ {
-		for j := 0; j < len(partitioned_slice[0]); j++ {
-			if idx_counter == len(slice) {
-				break
-			}
-
-			partitioned_slice[i][j] = slice[idx_counter]
-			idx_counter++
-		}
+		partitioned_slice = append(partitioned_slice, slice[i:batch_end])
 	}
 
 	return partitioned_slice
