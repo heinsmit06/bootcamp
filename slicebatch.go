@@ -14,7 +14,7 @@ func SliceBatch(slice []int, size int) [][]int {
 	partitioned_slice := make([][]int, slc_size)
 	for k := 0; k < len(partitioned_slice); k++ {
 		if k == len(partitioned_slice)-1 {
-			partitioned_slice[k] = make([]int, size-len(slice)%size)
+			partitioned_slice[k] = make([]int, len(slice)%size)
 			continue
 		}
 		partitioned_slice[k] = make([]int, size)
