@@ -1,6 +1,10 @@
 package bootcamp
 
 func SliceBatch(slice []int, size int) [][]int {
+	if size <= 0 {
+		return nil
+	}
+
 	slc_size := 0
 
 	if (len(slice))%size == 0 {
