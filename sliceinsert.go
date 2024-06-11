@@ -11,17 +11,22 @@ func SliceInsert(arr *[]int, idx int, values ...int) bool {
 		slc = append(slc, (*arr)[i])
 	}
 
+	checker_flag := 0
 	if idx >= arr_len {
 		for _, v := range values {
 			*arr = append(*arr, v)
 		}
+
+		checker_flag = 1
 	}
 
 	values_idx_counter := 0
 
-	for j := idx; j < arr_len; j++ {
-		(*arr)[j] = values[values_idx_counter]
-		values_idx_counter++
+	if checker_flag != 1 {
+		for j := idx; j < arr_len; j++ {
+			(*arr)[j] = values[values_idx_counter]
+			values_idx_counter++
+		}
 	}
 
 	for k := 0; k < len(slc); k++ {
