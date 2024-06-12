@@ -11,6 +11,8 @@ func SliceMatrixPrint(matrix [][]rune) {
 				ap.PutRune(' ')
 			}
 		}
-		ap.PutRune('\n')
+		if i < len(matrix)-1 {
+			ap.PutRune('\n')
+		}
 	}
 }
