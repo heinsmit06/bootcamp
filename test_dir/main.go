@@ -2,22 +2,11 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/alem-platform/ap"
 )
 
 func main() {
-	ap.PutRune(0)
-
-	slc := [4]int{}
-	slc[2] = 165
-	fmt.Println(slc)
-
-	arr := make([]int, 5)
-	for i := 0; i < len(arr); i++ {
-		arr[i] = i
-	}
-	fmt.Println(arr)
-	fmt.Println(arr[3:])
-	fmt.Println(arr[:2])
+	var s string = "Salem, World!"
+	a := "a"
+	fmt.Printf("value: %v, type: %T\n", s[1], s[1])
+	fmt.Printf("%v\n", byte(a))
 }
