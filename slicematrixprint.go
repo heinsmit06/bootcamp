@@ -1,4 +1,4 @@
-package main
+package bootcamp
 
 import "github.com/alem-platform/ap"
 
@@ -13,17 +13,4 @@ func SliceMatrixPrint(matrix [][]rune) {
 		}
 		ap.PutRune('\n')
 	}
-}
-
-func main() {
-	matrix := [][]rune{
-		{'a', 'b', 'c'},
-		{'d', 'e', 'f'},
-		{'g', 'h', 'i'},
-	}
-	SliceMatrixPrint(matrix)
-	// Output:
-	// a b c
-	// d e f
-	// g h i
 }
