@@ -1,8 +1,13 @@
 package bootcamp
 
-import "unicode/utf8"
-
 func CountRunes(s string) int {
-	length := utf8.RuneCountInString(s)
-	return length
+	counter := 0
+	for range s {
+		counter++
+	}
+
+	return counter
+
+	// length := utf8.RuneCountInString(s)
+	// return length
 }
