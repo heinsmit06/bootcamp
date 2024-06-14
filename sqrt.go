@@ -1,10 +1,23 @@
 package bootcamp
 
 func Sqrt(x int) int {
-	z := 1
-	for i := 0; i < 10; i++ {
-		z -= (z*z - x) / (2 * z)
+	if x < 0 {
+		return -1
 	}
 
-	return z
+	low, high := 0, x
+
+	for low <= high {
+		mid := low + (high-low)/2
+
+		if mid*mid == x {
+			return mid
+		} else if mid*mid < x {
+			low = mid + 1
+		} else {
+			high = mid - 1
+		}
+	}
+
+	return -1
 }
