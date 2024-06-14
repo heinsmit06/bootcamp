@@ -27,7 +27,7 @@ func itoa(n int) string {
 func MagicGrowth2() []string {
 	result := []string{}
 	for i := 0; i < 9; i++ {
-		for j := i + 1; j < 9; j++ {
+		for j := i + 1; j <= 9; j++ {
 			result = append(result, itoa(i)+itoa(j))
 		}
 	}
