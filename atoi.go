@@ -1,9 +1,4 @@
-package main
-
-import (
-	"fmt"
-	"math"
-)
+package bootcamp
 
 func Atoi(s string) int {
 	sum := 0
@@ -24,7 +19,7 @@ func Atoi(s string) int {
 		var max_degree_of_int float64 = float64(len(s) - 2)
 
 		for i := 1; i < len(s); i++ {
-			sum += (int(s[i]) - 48) * int(math.Pow(10, max_degree_of_int))
+			sum += (int(s[i]) - 48) * Pow(10, max_degree_of_int)
 			max_degree_of_int--
 		}
 
@@ -49,17 +44,24 @@ func Atoi(s string) int {
 	var max_degree_of_int float64 = float64(len(s) - 1)
 
 	for i := 0; i < len(s); i++ {
-		sum += (int(s[i]) - 48) * int(math.Pow(10, max_degree_of_int))
+		sum += (int(s[i]) - 48) * Power(10, max_degree_of_int)
 		max_degree_of_int--
 	}
 
 	return sum
 }
 
-func main() {
-	fmt.Println(Atoi("123"))
-	fmt.Println(Atoi("+123"))
-	fmt.Println(Atoi("-123"))
-	fmt.Println(Atoi("-123!"))
-	fmt.Println(Atoi("abc"))
-}
+//func main() {
+//	fmt.Println(Atoi("123"))
+//	fmt.Println(Atoi("+123"))
+//	fmt.Println(Atoi("-123"))
+//	fmt.Println(Atoi("-123!"))
+//	fmt.Println(Atoi("abc"))
+//}
+
+//func Power(n, degree int) int {
+//	power := 0
+//	for i := 0; i < degree; i++ {
+//		power *=
+//	}
+//}
