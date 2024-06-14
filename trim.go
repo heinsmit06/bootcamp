@@ -6,12 +6,11 @@ func Trim(s string) string {
 
 func RemoveLeadingSpaces(s string) string {
 	var res string
-	is_space := 1
 
-	for _, v := range s {
-		if v != 32 || is_space == 0 {
-			res += string(v)
-			is_space = 0
+	for i, v := range s {
+		if v != 32 {
+			res += s[i:]
+			break
 		}
 	}
 
