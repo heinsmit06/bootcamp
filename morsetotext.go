@@ -70,7 +70,7 @@ func MorseToText(s string) string {
 	}
 	var res string
 	for _, v := range str {
-		res += string(morse[string(v)])
+		res += string(morse[v])
 	}
 	return res
 }
