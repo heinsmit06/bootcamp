@@ -1,5 +1,5 @@
 package bootcamp
 
-func Mapset(m map[string]int, key string, value int) {
+func MapSet(m map[string]int, key string, value int) {
 	m[key] = value
 }
