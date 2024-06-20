@@ -16,7 +16,7 @@ func main() {
 	} else {
 
 		for num_args > 0 {
-			digit := byte(num_args % 10)
+			digit := byte(rune(num_args%10 + 48))
 			num_args_str = string(digit) + num_args_str
 			num_args /= 10
 		}
