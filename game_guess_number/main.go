@@ -16,7 +16,7 @@ func main() {
 
 		if random_number == user_input {
 			Print("Match, you win!")
-			break
+			return
 		} else if user_input > random_number {
 			Print("Lower\n")
 			continue
@@ -25,8 +25,6 @@ func main() {
 			continue
 		}
 	}
-
-	return
 }
 
 func Print(s string) {
