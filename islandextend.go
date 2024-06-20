@@ -1,36 +1,42 @@
 package bootcamp
 
-func IslandExtend(matrix [][]int, x, y int) bool {
-	rows := len(matrix)
-	cols := len(matrix[0])
-
-	// Check if (x, y) is within the bounds of the matrix
-	if x < 0 || x >= rows || y < 0 || y >= cols {
-		return false
-	}
-
-	// Check if the cell at (x, y) is already 1
-	if matrix[x][y] == 1 {
-		return false
-	}
-
-	// Define the directions for adjacent cells (up, down, left, right)
-	directions := [][]int{
-		{-1, 0}, // up
-		{1, 0},  // down
-		{0, -1}, // left
-		{0, 1},  // right
-	}
-
-	// Check if any adjacent cell is 1
-	for _, dir := range directions {
-		newX, newY := x+dir[0], y+dir[1]
-		if newX >= 0 && newX < rows && newY >= 0 && newY < cols && matrix[newX][newY] == 1 {
-			matrix[x][y] = 1
+func _IslandExtend(matrix *[][]int, x, y int) bool {
+	if y >= 0 && y < len((*matrix)) && x >= 0 && x < len((*matrix)[y]) {
+		if (*matrix)[y][x] > 0 {
+			(*matrix)[y][x] = -1
+			_IslandExtend(matrix, x, y+1)
+			_IslandExtend(matrix, x, y-1)
+			_IslandExtend(matrix, x+1, y)
+			_IslandExtend(matrix, x-1, y)
 			return true
+		} else {
+			(*matrix)[y][x] = -1
 		}
 	}
-
-	// If no adjacent cell is 1, return false
 	return false
+}
+
+func IslandExtend(matrix [][]int, x, y int) bool {
+	newMap := make([][]int, len(matrix))
+	for i := range newMap {
+		newMap[i] = make([]int, len(matrix[0]))
+	}
+	for i, w := range matrix {
+		for j := range w {
+			newMap[i][j] = matrix[i][j]
+		}
+	}
+	val := _IslandExtend(&newMap, x, y)
+	if val {
+		val = false
+		for i, w := range matrix {
+			for j := range w {
+				if matrix[i][j] == 0 && newMap[i][j] == -1 {
+					matrix[i][j] = 1
+					val = true
+				}
+			}
+		}
+	}
+	return val
 }
