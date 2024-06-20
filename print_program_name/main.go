@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/alem-platform/ap"
@@ -9,8 +8,21 @@ import (
 
 func main() {
 	args := os.Args
-	fmt.Print(args[0])
-	ap.PutRune('\n')
+	filename := args[0]
+
+	var n int
+
+	for i := len(filename) - 1; i >= 0; i-- {
+		if rune(filename[i]) == '/' || rune(filename[i]) == '.' {
+			n = i + 1
+		}
+	}
+
+	file_name := filename[n:]
+
+	for i := 0; i < len(file_name); i++ {
+		ap.PutRune(rune(file_name[i]))
+	}
 }
 
 ///////////////// NOT MINE
