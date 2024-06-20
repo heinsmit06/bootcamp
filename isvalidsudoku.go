@@ -1,61 +1,27 @@
 package bootcamp
 
-func ValidSudoku(n [][]int) bool {
-	// Check rows
+func ValidSudoku(n [9][9]int) bool {
+	m := make(map[int][][]int)
 	for i := 0; i < 9; i++ {
-		if !isValidGroup(n[i]) {
-			return false
-		}
-	}
-
-	// Check columns
-	for i := 0; i < 9; i++ {
-		column := make([]int, 9)
 		for j := 0; j < 9; j++ {
-			column[j] = n[j][i]
-		}
-		if !isValidGroup(column) {
-			return false
-		}
-	}
-
-	// Check 3x3 sub-grids
-	for i := 0; i < 9; i += 3 {
-		for j := 0; j < 9; j += 3 {
-			if !isValidSubGrid(n, i, j) {
-				return false
+			if n[i][j] == '.' {
+				continue
 			}
-		}
-	}
-
-	return true
-}
-
-func isValidGroup(group []int) bool {
-	seen := make(map[int]bool)
-	for _, num := range group {
-		if num != 0 {
-			if seen[num] {
-				return false
-			}
-			seen[num] = true
-		}
-	}
-	return true
-}
-
-func isValidSubGrid(board [][]int, startRow, startCol int) bool {
-	seen := make(map[int]bool)
-	for i := 0; i < 3; i++ {
-		for j := 0; j < 3; j++ {
-			num := board[startRow+i][startCol+j]
-			if num != 0 {
-				if seen[num] {
+			locs := m[n[i][j]]
+			for k := range locs {
+				if locs[k][0] == i {
 					return false
 				}
-				seen[num] = true
+				if locs[k][1] == j {
+					return false
+				}
+				if locs[k][0]/3 == i/3 && locs[k][1]/3 == j/3 {
+					return false
+				}
 			}
+			m[n[i][j]] = append(m[n[i][j]], []int{i, j})
 		}
 	}
+
 	return true
 }
