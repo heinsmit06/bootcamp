@@ -12,10 +12,14 @@ func main() {
 	for {
 		var user_input int
 		Print("Guess number: ")
-		fmt.Scanf("%d", &user_input)
+
+		_, err := fmt.Scanf("%d", &user_input)
+		if err != nil {
+			continue
+		}
 
 		if random_number == user_input {
-			Print("Match, you win!")
+			Print("Match, you win!\n")
 			return
 		} else if user_input > random_number {
 			Print("Lower\n")
