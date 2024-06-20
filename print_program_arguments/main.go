@@ -12,6 +12,7 @@ func main() {
 		for _, v := range args[i] {
 			ap.PutRune(rune(v))
 		}
+		ap.PutRune('\n')
 	}
 }
 
