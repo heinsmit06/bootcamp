@@ -16,10 +16,13 @@ func main() {
 
 		if random_number == user_input {
 			Print("Match, you win!")
+			return
 		} else if user_input > random_number {
 			Print("Lower")
+			continue
 		} else if user_input < random_number {
 			Print("Higher")
+			continue
 		}
 	}
 }
