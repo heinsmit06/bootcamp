@@ -15,6 +15,7 @@ func main() {
 	for i := len(filename) - 1; i >= 0; i-- {
 		if rune(filename[i]) == '/' || rune(filename[i]) == '.' {
 			n = i + 1
+			break
 		}
 	}
 
@@ -23,6 +24,8 @@ func main() {
 	for i := 0; i < len(file_name); i++ {
 		ap.PutRune(rune(file_name[i]))
 	}
+
+	ap.PutRune('\n')
 }
 
 ///////////////// NOT MINE
