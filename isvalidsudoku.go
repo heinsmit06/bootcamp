@@ -1,6 +1,6 @@
 package bootcamp
 
-func isValidSudoku(n [][]int) bool {
+func ValidSudoku(n [][]int) bool {
 	// Check rows
 	for i := 0; i < 9; i++ {
 		if !isValidGroup(n[i]) {
