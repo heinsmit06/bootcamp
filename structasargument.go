@@ -7,7 +7,6 @@ import (
 )
 
 func PrintUserInfo(u firststruct.User) {
-	Println("Output:")
 	Print("Name: ")
 	Println(u.Name)
 	if u.GetPassword() == "" {
