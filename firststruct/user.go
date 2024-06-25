@@ -12,3 +12,7 @@ func NewUser(name, password string) User {
 	}
 	return new_user
 }
+
+func (u User) GetPassword() string {
+	return u.password
+}
