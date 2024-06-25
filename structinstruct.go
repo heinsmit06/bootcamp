@@ -1,6 +1,8 @@
 package bootcamp
 
-import "bootcamp/firststruct"
+import (
+	"bootcamp/firststruct"
+)
 
 type Cart struct {
 	Owner *firststruct.User
