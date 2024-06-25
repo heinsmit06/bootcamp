@@ -2,8 +2,14 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
+
+type Book struct {
+	Author string
+	Title  string
+	Pages  int
+	Year   int
+}
 
 func main() {
 	///////////////                MAPS MAPS MAPS MAPS MAPS MAPS MAPS MAPS
@@ -30,11 +36,31 @@ func main() {
 
 	///////////////                os.Args, Work with files
 
-	args := os.Args
-	fmt.Printf("Program name: %v\n", args[0])
-	fmt.Printf("args: %s\n", args[1:])
-	filename := os.Args[1]
-	fmt.Printf("filename: %s\n", filename)
-	content, _ := os.ReadFile(filename)
-	fmt.Println(string(content))
+	// args := os.Args
+	// fmt.Printf("Program name: %v\n", args[0])
+	// fmt.Printf("args: %s\n", args[1:])
+	// filename := os.Args[1]
+	// fmt.Printf("filename: %s\n", filename)
+	// content, _ := os.ReadFile(filename)
+	// fmt.Println(string(content))
+
+	///////////////
+
+	myBook := Book{
+		Author: "Fitzgerald",
+		Title:  "The Great Gatsby",
+		Year:   1968,
+		Pages:  324,
+	}
+
+	newBook := myBook.isNew()
+	fmt.Printf("The Great Gatsby is new: %v", newBook)
+}
+
+func (b Book) isNew() bool {
+	if b.Year >= 1970 {
+		return true
+	} else {
+		return false
+	}
 }
