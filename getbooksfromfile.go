@@ -1,8 +1,7 @@
-package main
+package bootcamp
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 )
 
@@ -14,10 +13,7 @@ type Book struct {
 
 func GetBooksFromCsv(path string) []*Book {
 	books := []*Book{}
-	file, err := os.Open(path)
-	if err != nil {
-		fmt.Println(err)
-	}
+	file, _ := os.Open(path)
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
@@ -51,18 +47,6 @@ func GetBooksFromCsv(path string) []*Book {
 	}
 
 	return books
-}
-
-func main() {
-	books := GetBooksFromCsv("books.csv")
-	for _, b := range books {
-		fmt.Println(b.Name, b.Author, b.Year)
-	}
-
-	//books2 := GetBooksFromCsv("books2.csv")
-	//for _, b := range books2 {
-	//	fmt.Println(b.Name, b.Author, b.Year)
-	//}
 }
 
 func Atoi6(s string) int {
