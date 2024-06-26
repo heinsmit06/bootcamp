@@ -1,4 +1,4 @@
-package bootcamp
+package solution
 
 import (
 	"bufio"
