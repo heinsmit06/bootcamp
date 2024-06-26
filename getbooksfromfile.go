@@ -83,9 +83,9 @@ func parseLine(line string) []string {
 			splittedFile = append(splittedFile, line[start:i])
 			start = i + 1
 		}
-
-		splittedFile = append(splittedFile, line[start:])
 	}
+
+	splittedFile = append(splittedFile, line[start:])
 
 	return splittedFile
 }
