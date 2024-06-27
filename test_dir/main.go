@@ -11,6 +11,40 @@ type Book struct {
 	Year   int
 }
 
+type Node struct {
+	data int
+	next *Node
+}
+
+type LinkedList struct {
+	head *Node
+}
+
+func (list *LinkedList) insert(newData int) {
+	newNode := &Node{data: newData}
+	if list.head == nil {
+		list.head = newNode
+		return
+	}
+
+	current := list.head
+	for (*current).next != nil {
+		current = current.next
+	}
+
+	(*current).next = newNode
+}
+
+func (list *LinkedList) print() {
+	current := (*list).head
+	for current != nil {
+		fmt.Printf("%d -> ", (*current).data)
+		current = (*current).next
+	}
+
+	fmt.Println("nil")
+}
+
 func main() {
 	///////////////                MAPS MAPS MAPS MAPS MAPS MAPS MAPS MAPS
 	// var m map[string]int
@@ -44,7 +78,7 @@ func main() {
 	// content, _ := os.ReadFile(filename)
 	// fmt.Println(string(content))
 
-	///////////////
+	///////////////                Structs
 
 	myBook := Book{
 		Author: "Fitzgerald",
@@ -55,6 +89,16 @@ func main() {
 
 	newBook := myBook.isNew()
 	fmt.Printf("The Great Gatsby is new: %v", newBook)
+
+	///////////////                Linked Lists
+
+	list := LinkedList{}
+	list.print()
+	list.insert(51)
+	list.insert(12)
+	list.insert(66)
+	list.insert(69)
+	list.print()
 }
 
 func (b Book) isNew() bool {
