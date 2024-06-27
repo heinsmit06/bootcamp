@@ -11,8 +11,8 @@ type List struct {
 
 func NewList() *List {
 	newList := &List{}
-	listNodeHead, listNodeTail := &ListNode{}, &ListNode{}
-	newList.Head = listNodeHead
-	newList.Tail = listNodeTail
+	// listNodeHead, listNodeTail := &ListNode{}, &ListNode{}
+	// newList.Head = listNodeHead
+	// newList.Tail = listNodeTail
 	return newList
 }
