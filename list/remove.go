@@ -1,6 +1,10 @@
 package list
 
 func (l *List) Remove(n *ListNode) {
+	if l.Head == nil || n == nil {
+		return
+	}
+
 	if l.Head == n {
 		l.Head = nil
 		return
