@@ -6,9 +6,10 @@ func (l *List) Len() int {
 	}
 
 	current := l.Head
-	count := 0
+	count := 1
 	for current.Next != nil {
 		count++
+		current = current.Next
 	}
 
 	return count
