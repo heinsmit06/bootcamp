@@ -12,9 +12,10 @@ func (l *List) Remove(n *ListNode) {
 
 	current := l.Head
 
-	for current.Next != n && current.Next != nil {
+	for current.Next != n && current != nil {
 		current = current.Next
 	}
+
 	if current.Next != nil {
 		current.Next = n.Next
 	}
