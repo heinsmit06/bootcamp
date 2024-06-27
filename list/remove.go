@@ -15,6 +15,7 @@ func (l *List) Remove(n *ListNode) {
 	for current.Next != n && current.Next != nil {
 		current = current.Next
 	}
-
-	current.Next = n.Next
+	if current.Next != nil {
+		current.Next = n.Next
+	}
 }
