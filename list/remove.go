@@ -6,17 +6,15 @@ func (l *List) Remove(n *ListNode) {
 	}
 
 	if l.Head == n {
-		l.Head = nil
+		l.Head = n.Next
 		return
 	}
 
 	current := l.Head
 
-	for current.Next != n && current != nil {
+	for current.Next != n && current.Next != nil {
 		current = current.Next
 	}
 
-	if current.Next != nil {
-		current.Next = n.Next
-	}
+	current.Next = n.Next
 }
