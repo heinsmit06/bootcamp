@@ -6,6 +6,12 @@ func (l *List) PushBefore(n *ListNode, v interface{}) {
 	}
 
 	current := l.Head
+	if current == n {
+		temp := l.Head
+		l.Head = &ListNode{Value: v, Next: temp}
+		return
+	}
+
 	for current.Next != n && current.Next != nil {
 		current = current.Next
 	}
