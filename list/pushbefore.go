@@ -1,10 +1,18 @@
 package list
 
 func (l *List) PushBefore(n *ListNode, v interface{}) {
+	if l.Head == nil || n == nil {
+		return
+	}
+
 	current := l.Head
 	for current.Next != n && current.Next != nil {
 		current = current.Next
 	}
 
-	l.PushAfter(current, v)
+	if current.Next == n {
+		l.PushAfter(current, v)
+	} else if current.Next == nil {
+		return
+	}
 }
