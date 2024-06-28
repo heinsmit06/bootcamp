@@ -9,7 +9,6 @@ func (l *List) Reverse() {
 	previous := l.Head
 	for current != nil {
 		if current == l.Head {
-			previous = current
 			continue
 		}
 
