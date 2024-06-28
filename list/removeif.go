@@ -6,7 +6,7 @@ func (l *List) RemoveIf(fn func(n *ListNode) bool) {
 	}
 
 	current := l.Head
-	for current.Next != nil {
+	for current != nil {
 		if fn(current) {
 			l.Remove(current)
 		}
