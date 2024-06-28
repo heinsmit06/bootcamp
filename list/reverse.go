@@ -6,17 +6,13 @@ func (l *List) Reverse() {
 	}
 
 	current := l.Head
-	previous := l.Head
+	var previous *ListNode = nil
 
 	for current != nil {
-		if current == l.Head {
-			current = current.Next
-			continue
-		}
 		current.Next = previous
 		previous = current
 		current = current.Next
 	}
 
-	l.Head = current
+	l.Head = previous
 }
