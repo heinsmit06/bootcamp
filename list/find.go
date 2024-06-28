@@ -7,7 +7,7 @@ func (l *List) Find(fn func(v interface{}) bool) *ListNode {
 
 	current := l.Head
 	for current.Next != nil {
-		if fn(current) {
+		if fn(current.Value) {
 			return current
 		}
 
