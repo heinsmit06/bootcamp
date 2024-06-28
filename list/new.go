@@ -2,6 +2,7 @@ package list
 
 type ListNode struct {
 	Next  *ListNode
+	Prev  *ListNode
 	Value interface{}
 }
 
