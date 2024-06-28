@@ -8,6 +8,10 @@ func NewQueue() *Queue {
 	return &Queue{}
 }
 
+func (q *Queue) Push(v interface{}) {
+	q.items = append(q.items, v)
+}
+
 func (q *Queue) Pop() interface{} {
 	if len(q.items) == 0 {
 		return nil
